@@ -24,6 +24,7 @@ struct LoginView: View {
                 Color.white
                     .ignoresSafeArea()
                 VStack {
+                    // implementar imagen y textfields
                     Image("calendar")
                         .resizable()
                         .frame(width: 130, height: 130)
@@ -157,7 +158,7 @@ extension LoginView {
         Color.black.opacity(0.7)
     }
     
-    
+    //funcion del boton para pasar a registro
     func loginButton(title: String) -> some View {
         Button {
             if email.isEmpty || password.isEmpty {

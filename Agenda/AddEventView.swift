@@ -61,7 +61,7 @@ struct AddEventView: View {
         
         //let dataCon = Int(dateSelected.timeIntervalSince1970)
         //baseUrl + endpoint
-        let url = "https://superapi.netlify.app/api/eventos"
+        let url = "https://superapi.netlify.app/api/db/eventos"
         let dataConv = convertDateToInt(date: dateSelected)
         
         //params
@@ -74,7 +74,7 @@ struct AddEventView: View {
         NetworkHelper.shared.requestProvider(url: url, params: dictionary) { data, response, error in
             if let error = error {
                 onError(error: error.localizedDescription)
-            } else if let data = data, let response = response as? HTTPURLResponse {
+            }else if let data = data, let response = response as? HTTPURLResponse {
                 if response.statusCode == 200 {
                     onSuccess()
                 } else {
